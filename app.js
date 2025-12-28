@@ -1,42 +1,156 @@
 // Country data management
 let countryData = {};
 let selectedCountry = null;
+let map = null;
+let countriesLayer = null;
+
+// Country code mapping (ISO 3166-1 alpha-3 to alpha-2)
+const countryCodeMap = {
+    'USA': 'US',
+    'GBR': 'GB',
+    'CHE': 'CH',
+    'SGP': 'SG',
+    'CAN': 'CA',
+    'AUS': 'AU',
+    'DEU': 'DE',
+    'FRA': 'FR',
+    'JPN': 'JP',
+    'CHN': 'CN'
+};
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', async () => {
     await loadCountryData();
-    await loadMap();
+    initializeMap();
+    await loadCountryBoundaries();
     updateLastUpdated();
     setupEventListeners();
 });
 
-// Load the world map
-async function loadMap() {
+// Initialize Leaflet map
+function initializeMap() {
     const mapContainer = document.getElementById('map-container');
-    mapContainer.innerHTML = '<p class="loading">Loading map...</p>';
 
+    // Create map centered on world view
+    map = L.map('map-container', {
+        center: [20, 0],
+        zoom: 2,
+        minZoom: 2,
+        maxZoom: 6,
+        worldCopyJump: true
+    });
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+    }).addTo(map);
+}
+
+// Load country boundaries from GeoJSON
+async function loadCountryBoundaries() {
     try {
-        const response = await fetch('map.svg');
-        if (!response.ok) {
-            throw new Error('Map not found');
-        }
-        const svgText = await response.text();
-        mapContainer.innerHTML = svgText;
+        // Using Natural Earth data from CDN
+        const response = await fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson');
 
-        // Add click handlers to countries
-        const countries = mapContainer.querySelectorAll('.country');
-        countries.forEach(country => {
-            country.addEventListener('click', () => handleCountryClick(country));
-            
-            // Add has-data class if data exists
-            const countryCode = country.getAttribute('data-country');
-            if (countryData[countryCode]) {
-                country.classList.add('has-data');
+        if (!response.ok) {
+            throw new Error('Failed to load country boundaries');
+        }
+
+        const geojsonData = await response.json();
+
+        // Add countries as GeoJSON layer
+        countriesLayer = L.geoJSON(geojsonData, {
+            style: (feature) => getCountryStyle(feature),
+            onEachFeature: (feature, layer) => {
+                // Add click handler
+                layer.on('click', () => handleCountryClick(feature, layer));
+
+                // Add hover effects
+                layer.on('mouseover', function(e) {
+                    this.setStyle({
+                        fillOpacity: 0.7,
+                        weight: 2
+                    });
+                });
+
+                layer.on('mouseout', function(e) {
+                    countriesLayer.resetStyle(this);
+                });
+
+                // Add tooltip with country name
+                const countryName = feature.properties.ADMIN || feature.properties.NAME;
+                layer.bindTooltip(countryName, {
+                    permanent: false,
+                    sticky: true
+                });
             }
-        });
+        }).addTo(map);
+
     } catch (error) {
-        mapContainer.innerHTML = `<div class="error">Error loading map: ${error.message}</div>`;
+        console.error('Error loading country boundaries:', error);
+        const mapContainer = document.getElementById('map-container');
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'map-error';
+        errorDiv.innerHTML = `<p>Error loading map: ${error.message}</p>`;
+        mapContainer.appendChild(errorDiv);
     }
+}
+
+// Get style for country based on data availability
+function getCountryStyle(feature) {
+    const countryCode = getCountryCode(feature);
+    const hasData = countryData[countryCode] !== undefined;
+
+    return {
+        fillColor: hasData ? '#818cf8' : '#e0e7ff',
+        weight: 1,
+        opacity: 1,
+        color: '#667eea',
+        fillOpacity: 0.5
+    };
+}
+
+// Get country code from GeoJSON feature
+function getCountryCode(feature) {
+    // Try different property names used in various GeoJSON formats
+    const iso3 = feature.properties.ISO_A3 || feature.properties.ADM0_A3;
+    const iso2 = feature.properties.ISO_A2 || feature.properties.ADM0_A2;
+
+    // Convert ISO 3166-1 alpha-3 to alpha-2 if needed
+    if (iso3 && countryCodeMap[iso3]) {
+        return countryCodeMap[iso3];
+    }
+
+    return iso2 || iso3;
+}
+
+// Handle country click
+function handleCountryClick(feature, layer) {
+    // Reset previous selection
+    if (countriesLayer) {
+        countriesLayer.setStyle((feature) => getCountryStyle(feature));
+    }
+
+    // Highlight selected country
+    layer.setStyle({
+        fillColor: '#667eea',
+        fillOpacity: 0.8,
+        weight: 2,
+        color: '#4c51bf'
+    });
+
+    const countryCode = getCountryCode(feature);
+    const countryName = feature.properties.ADMIN || feature.properties.NAME || countryCode;
+
+    selectedCountry = countryCode;
+    displayCountryInfo(countryCode, countryName);
+
+    // Zoom to country bounds
+    map.fitBounds(layer.getBounds(), {
+        maxZoom: 5,
+        padding: [50, 50]
+    });
 }
 
 // Load country regulation data
@@ -53,23 +167,6 @@ async function loadCountryData() {
         console.warn('Error loading country data:', error);
         countryData = getSampleData();
     }
-}
-
-// Handle country click
-function handleCountryClick(countryElement) {
-    // Remove previous selection
-    document.querySelectorAll('.country.selected').forEach(el => {
-        el.classList.remove('selected');
-    });
-
-    // Select new country
-    countryElement.classList.add('selected');
-    
-    const countryCode = countryElement.getAttribute('data-country');
-    const countryName = countryElement.getAttribute('data-name') || countryCode;
-    
-    selectedCountry = countryCode;
-    displayCountryInfo(countryCode, countryName);
 }
 
 // Display country information
@@ -147,9 +244,14 @@ function displayCountryInfo(countryCode, countryName) {
 function setupEventListeners() {
     const closeBtn = document.getElementById('close-btn');
     closeBtn.addEventListener('click', () => {
-        document.querySelectorAll('.country.selected').forEach(el => {
-            el.classList.remove('selected');
-        });
+        // Reset map view
+        map.setView([20, 0], 2);
+
+        // Reset country styles
+        if (countriesLayer) {
+            countriesLayer.setStyle((feature) => getCountryStyle(feature));
+        }
+
         selectedCountry = null;
         document.getElementById('country-name').textContent = 'Select a Country';
         document.getElementById('info-content').innerHTML = `
