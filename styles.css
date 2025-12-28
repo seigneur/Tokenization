@@ -75,6 +75,13 @@ main {
     stroke-width: 1.5;
 }
 
+.country:focus {
+    fill: #a5b4fc;
+    stroke-width: 1.5;
+    outline: 3px solid #4c51bf;
+    outline-offset: 2px;
+}
+
 .country.selected {
     fill: #667eea;
     stroke: #4c51bf;

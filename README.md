@@ -167,7 +167,7 @@ This information is provided for educational purposes only and should not be con
 - [MAS Digital Payment Tokens](https://www.mas.gov.sg/regulation/payments)
 - [SEC Digital Assets](https://www.sec.gov/digital-assets)
 - [FCA Cryptoassets](https://www.fca.org.uk/firms/cryptoassets)
-- [FINMA Token Guidance](https://www.finma.ch/en/)
+- [FINMA Token Guidance](https://www.finma.ch/en/finma-topics/finma-tokens/)
 
 ---
 

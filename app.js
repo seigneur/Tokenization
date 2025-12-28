@@ -4,8 +4,8 @@ let selectedCountry = null;
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', async () => {
-    await loadMap();
     await loadCountryData();
+    await loadMap();
     updateLastUpdated();
     setupEventListeners();
 });
@@ -295,7 +295,7 @@ function getSampleData() {
             sources: [
                 {
                     name: 'FINMA Token Guidance',
-                    url: 'https://www.finma.ch/en/finma/finma-tokens/'
+                    url: 'https://www.finma.ch/en/finma-topics/finma-tokens/'
                 }
             ],
             lastUpdated: '2024-01-10'
