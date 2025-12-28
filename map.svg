@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" role="img" aria-label="Interactive world map for selecting countries">
+  <!-- Simplified world map with major countries -->
+  
+  <!-- United States -->
+  <path class="country" data-country="US" data-name="United States" 
+        d="M 100 150 L 250 150 L 250 250 L 100 250 Z" />
+  
+  <!-- Canada -->
+  <path class="country" data-country="CA" data-name="Canada" 
+        d="M 100 80 L 280 80 L 280 145 L 100 145 Z" />
+  
+  <!-- Mexico -->
+  <path class="country" data-country="MX" data-name="Mexico" 
+        d="M 120 255 L 230 255 L 220 310 L 130 310 Z" />
+  
+  <!-- Brazil -->
+  <path class="country" data-country="BR" data-name="Brazil" 
+        d="M 280 300 L 360 300 L 370 400 L 270 400 Z" />
+  
+  <!-- United Kingdom -->
+  <path class="country" data-country="GB" data-name="United Kingdom" 
+        d="M 470 130 L 490 130 L 490 150 L 470 150 Z" />
+  
+  <!-- France -->
+  <path class="country" data-country="FR" data-name="France" 
+        d="M 485 155 L 515 155 L 515 185 L 485 185 Z" />
+  
+  <!-- Germany -->
+  <path class="country" data-country="DE" data-name="Germany" 
+        d="M 520 140 L 550 140 L 550 165 L 520 165 Z" />
+  
+  <!-- Switzerland -->
+  <path class="country" data-country="CH" data-name="Switzerland" 
+        d="M 515 170 L 535 170 L 535 180 L 515 180 Z" />
+  
+  <!-- Spain -->
+  <path class="country" data-country="ES" data-name="Spain" 
+        d="M 470 190 L 510 190 L 510 215 L 470 215 Z" />
+  
+  <!-- Italy -->
+  <path class="country" data-country="IT" data-name="Italy" 
+        d="M 530 180 L 555 180 L 555 220 L 530 220 Z" />
+  
+  <!-- Russia -->
+  <path class="country" data-country="RU" data-name="Russia" 
+        d="M 570 80 L 850 80 L 850 180 L 570 180 Z" />
+  
+  <!-- China -->
+  <path class="country" data-country="CN" data-name="China" 
+        d="M 720 160 L 850 160 L 850 260 L 720 260 Z" />
+  
+  <!-- Japan -->
+  <path class="country" data-country="JP" data-name="Japan" 
+        d="M 870 180 L 920 180 L 920 240 L 870 240 Z" />
+  
+  <!-- South Korea -->
+  <path class="country" data-country="KR" data-name="South Korea" 
+        d="M 855 220 L 875 220 L 875 245 L 855 245 Z" />
+  
+  <!-- India -->
+  <path class="country" data-country="IN" data-name="India" 
+        d="M 650 220 L 710 220 L 710 300 L 650 300 Z" />
+  
+  <!-- Singapore -->
+  <path class="country" data-country="SG" data-name="Singapore" 
+        d="M 750 310 L 760 310 L 760 315 L 750 315 Z" />
+  
+  <!-- Thailand -->
+  <path class="country" data-country="TH" data-name="Thailand" 
+        d="M 730 270 L 760 270 L 760 305 L 730 305 Z" />
+  
+  <!-- Australia -->
+  <path class="country" data-country="AU" data-name="Australia" 
+        d="M 780 350 L 900 350 L 900 430 L 780 430 Z" />
+  
+  <!-- UAE -->
+  <path class="country" data-country="AE" data-name="United Arab Emirates" 
+        d="M 600 230 L 630 230 L 630 250 L 600 250 Z" />
+  
+  <!-- Saudi Arabia -->
+  <path class="country" data-country="SA" data-name="Saudi Arabia" 
+        d="M 565 230 L 595 230 L 595 260 L 565 260 Z" />
+  
+  <!-- South Africa -->
+  <path class="country" data-country="ZA" data-name="South Africa" 
+        d="M 540 380 L 590 380 L 590 420 L 540 420 Z" />
+  
+  <!-- Nigeria -->
+  <path class="country" data-country="NG" data-name="Nigeria" 
+        d="M 505 270 L 535 270 L 535 290 L 505 290 Z" />
+  
+  <!-- Egypt -->
+  <path class="country" data-country="EG" data-name="Egypt" 
+        d="M 545 210 L 575 210 L 575 240 L 545 240 Z" />
+  
+  <!-- Argentina -->
+  <path class="country" data-country="AR" data-name="Argentina" 
+        d="M 270 370 L 320 370 L 310 450 L 260 450 Z" />
+  
+  <!-- Turkey -->
+  <path class="country" data-country="TR" data-name="Turkey" 
+        d="M 555 180 L 595 180 L 595 200 L 555 200 Z" />
+  
+  <!-- Indonesia -->
+  <path class="country" data-country="ID" data-name="Indonesia" 
+        d="M 730 320 L 820 320 L 820 340 L 730 340 Z" />
+  
+  <!-- Malaysia -->
+  <path class="country" data-country="MY" data-name="Malaysia" 
+        d="M 740 300 L 780 300 L 780 318 L 740 318 Z" />
+  
+  <!-- Vietnam -->
+  <path class="country" data-country="VN" data-name="Vietnam" 
+        d="M 765 260 L 785 260 L 785 295 L 765 295 Z" />
+  
+  <!-- Philippines -->
+  <path class="country" data-country="PH" data-name="Philippines" 
+        d="M 820 250 L 845 250 L 845 295 L 820 295 Z" />
+  
+  <!-- Poland -->
+  <path class="country" data-country="PL" data-name="Poland" 
+        d="M 535 125 L 560 125 L 560 145 L 535 145 Z" />
+  
+  <!-- Netherlands -->
+  <path class="country" data-country="NL" data-name="Netherlands" 
+        d="M 495 135 L 515 135 L 515 145 L 495 145 Z" />
+  
+  <!-- Sweden -->
+  <path class="country" data-country="SE" data-name="Sweden" 
+        d="M 530 90 L 555 90 L 555 125 L 530 125 Z" />
+  
+  <!-- Norway -->
+  <path class="country" data-country="NO" data-name="Norway" 
+        d="M 510 85 L 528 85 L 528 125 L 510 125 Z" />
+  
+  <!-- Background ocean -->
+  <rect x="0" y="0" width="1000" height="500" fill="#e0f2fe" opacity="0.3" style="pointer-events: none;"/>
+</svg>

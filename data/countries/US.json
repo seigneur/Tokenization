@@ -1,0 +1,33 @@
+{
+  "overview": "The United States has a complex regulatory framework for tokenization involving multiple agencies. The SEC regulates security tokens, while the CFTC oversees certain digital commodities. State-level regulations also apply.",
+  "regulations": [
+    {
+      "title": "Securities Act of 1933",
+      "description": "Security tokens must comply with registration or exemption requirements"
+    },
+    {
+      "title": "Howey Test",
+      "description": "Determines whether a token qualifies as a security"
+    }
+  ],
+  "requirements": [
+    "SEC registration or exemption for security tokens",
+    "State money transmitter licenses may be required",
+    "AML/KYC compliance under Bank Secrecy Act",
+    "CFTC oversight for certain tokens"
+  ],
+  "authorities": [
+    "Securities and Exchange Commission (SEC)",
+    "Commodity Futures Trading Commission (CFTC)",
+    "FinCEN",
+    "State regulators"
+  ],
+  "sources": [
+    {
+      "name": "SEC Framework for Digital Assets",
+      "url": "https://www.sec.gov/digital-assets"
+    }
+  ],
+  "lastUpdated": "2025-12-28",
+  "autoFetched": true
+}
