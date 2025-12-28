@@ -50,11 +50,10 @@ main {
 
 #map-container {
     width: 100%;
-    min-height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 600px;
     position: relative;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 #map-container svg {
@@ -209,10 +208,18 @@ footer {
     color: #667eea;
 }
 
-.error {
+.error, .map-error {
     color: #ef4444;
     padding: 1rem;
     background: #fee;
     border-radius: 5px;
     margin-top: 1rem;
+}
+
+.map-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
 }
