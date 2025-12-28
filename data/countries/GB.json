@@ -1,0 +1,32 @@
+{
+  "overview": "The United Kingdom regulates tokenization through the Financial Conduct Authority (FCA). Security tokens are regulated as specified investments, while certain crypto assets fall under e-money or payment services regulations.",
+  "regulations": [
+    {
+      "title": "Financial Services and Markets Act 2000",
+      "description": "Primary legislation governing financial services including security tokens"
+    },
+    {
+      "title": "Money Laundering Regulations 2017",
+      "description": "Applies to cryptoasset exchange providers and custodian wallet providers"
+    }
+  ],
+  "requirements": [
+    "FCA authorization required for security token activities",
+    "Registration for cryptoasset businesses",
+    "AML/CTF compliance mandatory",
+    "Consumer protection and disclosure requirements"
+  ],
+  "authorities": [
+    "Financial Conduct Authority (FCA)",
+    "Bank of England",
+    "HM Treasury"
+  ],
+  "sources": [
+    {
+      "name": "FCA Cryptoassets Guidance",
+      "url": "https://www.fca.org.uk/firms/cryptoassets"
+    }
+  ],
+  "lastUpdated": "2025-12-28",
+  "autoFetched": true
+}

@@ -1,0 +1,38 @@
+{
+  "overview": "Singapore has established comprehensive regulations for tokenization through the Monetary Authority of Singapore (MAS). The Payment Services Act regulates digital payment tokens, while securities tokens fall under the Securities and Futures Act.",
+  "regulations": [
+    {
+      "title": "Payment Services Act (PSA)",
+      "description": "Governs digital payment token services including exchanges and wallet providers"
+    },
+    {
+      "title": "Securities and Futures Act (SFA)",
+      "description": "Applies to tokens that constitute securities or derivatives"
+    },
+    {
+      "title": "MAS Guidelines on Digital Tokens",
+      "description": "Provides guidance on the application of securities laws to token offerings"
+    }
+  ],
+  "requirements": [
+    "License required for operating digital payment token services",
+    "AML/CFT compliance mandatory",
+    "Technology risk management standards must be met",
+    "Consumer protection measures required"
+  ],
+  "authorities": [
+    "Monetary Authority of Singapore (MAS)"
+  ],
+  "sources": [
+    {
+      "name": "MAS Digital Payment Tokens",
+      "url": "https://www.mas.gov.sg/regulation/payments"
+    },
+    {
+      "name": "MAS Guidelines on Token Offerings",
+      "url": "https://www.mas.gov.sg/regulation/securities-futures-and-fund-management"
+    }
+  ],
+  "lastUpdated": "2025-12-28",
+  "autoFetched": true
+}

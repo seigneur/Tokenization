@@ -1,0 +1,30 @@
+{
+  "overview": "Switzerland, particularly through FINMA, has developed a progressive and clear regulatory framework for tokenization. The country distinguishes between payment tokens, utility tokens, and asset tokens.",
+  "regulations": [
+    {
+      "title": "DLT Act",
+      "description": "Blockchain and DLT-specific framework introduced in 2021"
+    },
+    {
+      "title": "FINMA ICO Guidelines",
+      "description": "Classification framework for tokens and regulatory treatment"
+    }
+  ],
+  "requirements": [
+    "License requirements depend on token classification",
+    "AML compliance for financial intermediaries",
+    "Prospectus requirements for asset tokens",
+    "Banking license may be required for certain activities"
+  ],
+  "authorities": [
+    "Swiss Financial Market Supervisory Authority (FINMA)"
+  ],
+  "sources": [
+    {
+      "name": "FINMA Token Guidance",
+      "url": "https://www.finma.ch/en/finma/finma-tokens/"
+    }
+  ],
+  "lastUpdated": "2025-12-28",
+  "autoFetched": true
+}
