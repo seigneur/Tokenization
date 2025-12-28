@@ -84,8 +84,8 @@ function displayCountryInfo(countryCode, countryName) {
 
     if (!data) {
         infoContent.innerHTML = `
-            <p class="placeholder">No tokenization regulation data available for ${countryName} yet.</p>
-            <p class="placeholder">Check back later as we continue to update our database.</p>
+            <p class="placeholder">No information available for ${countryName} yet.</p>
+            <p class="placeholder">Check back later as we continue to add more countries.</p>
         `;
         return;
     }
@@ -98,7 +98,7 @@ function displayCountryInfo(countryCode, countryName) {
 
     if (data.regulations && data.regulations.length > 0) {
         html += `
-            <h3>Key Regulations</h3>
+            <h3>Main Rules</h3>
             <ul>
                 ${data.regulations.map(reg => `<li><strong>${reg.title}</strong>: ${reg.description}</li>`).join('')}
             </ul>
@@ -116,7 +116,7 @@ function displayCountryInfo(countryCode, countryName) {
 
     if (data.authorities && data.authorities.length > 0) {
         html += `
-            <h3>Regulatory Authorities</h3>
+            <h3>Who's in Charge</h3>
             <ul>
                 ${data.authorities.map(auth => `<li>${auth}</li>`).join('')}
             </ul>
@@ -153,7 +153,7 @@ function setupEventListeners() {
         selectedCountry = null;
         document.getElementById('country-name').textContent = 'Select a Country';
         document.getElementById('info-content').innerHTML = `
-            <p class="placeholder">Click on any country on the map to view its tokenization regulations and guidelines.</p>
+            <p class="placeholder">Click on any country on the map to see its digital token rules.</p>
         `;
     });
 }
