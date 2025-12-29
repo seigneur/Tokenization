@@ -101,8 +101,6 @@ main {
     pointer-events: none;
 }
 
-/* Fallback for browsers that don't support dvh - No longer needed with fixed height */
-
 .info-panel.active {
     transform: translateX(0);
     visibility: visible;
@@ -194,7 +192,7 @@ footer {
 @media (max-width: 968px) {
     .info-panel {
         width: 80%;
-        height: calc(100vh - 180px);
+        height: calc(100vh - 200px);
     }
 
     .info-panel.active {
@@ -206,7 +204,7 @@ footer {
     }
 
     main {
-        height: calc(100vh - 180px);
+        height: calc(100vh - 200px);
     }
 }
 
