@@ -100,10 +100,30 @@ async function loadCountryBoundaries() {
 // Get style for country based on data availability
 function getCountryStyle(feature) {
     const countryCode = getCountryCode(feature);
-    const hasData = countryData[countryCode] !== undefined;
+    const data = countryData[countryCode];
+    
+    // Default style for countries without data (light gray)
+    let fillColor = '#e0e7ff';
+    
+    if (data) {
+        // Color based on status
+        switch (data.status) {
+            case 'clear':
+                fillColor = '#22c55e'; // Green for clear/positive
+                break;
+            case 'unclear':
+                fillColor = '#eab308'; // Yellow for unclear
+                break;
+            case 'prohibited':
+                fillColor = '#1f2937'; // Dark gray/black for prohibited
+                break;
+            default:
+                fillColor = '#818cf8'; // Default purple if status is missing
+        }
+    }
 
     return {
-        fillColor: hasData ? '#818cf8' : '#e0e7ff',
+        fillColor: fillColor,
         weight: 1,
         opacity: 1,
         color: '#667eea',
@@ -132,15 +152,33 @@ function handleCountryClick(feature, layer) {
         countriesLayer.setStyle((feature) => getCountryStyle(feature));
     }
 
+    // Get current fill color and darken it for selection
+    const countryCode = getCountryCode(feature);
+    const data = countryData[countryCode];
+    let selectedColor = '#667eea'; // Default
+    
+    if (data) {
+        switch (data.status) {
+            case 'clear':
+                selectedColor = '#16a34a'; // Darker green
+                break;
+            case 'unclear':
+                selectedColor = '#ca8a04'; // Darker yellow
+                break;
+            case 'prohibited':
+                selectedColor = '#000000'; // Pure black
+                break;
+        }
+    }
+    
     // Highlight selected country
     layer.setStyle({
-        fillColor: '#667eea',
+        fillColor: selectedColor,
         fillOpacity: 0.8,
         weight: 2,
         color: '#4c51bf'
     });
 
-    const countryCode = getCountryCode(feature);
     const countryName = feature.properties.ADMIN || feature.properties.NAME || countryCode;
 
     selectedCountry = countryCode;
@@ -290,6 +328,7 @@ function updateLastUpdated() {
 function getSampleData() {
     return {
         'SG': {
+            status: 'clear',
             overview: 'Singapore has established comprehensive regulations for tokenization through the Monetary Authority of Singapore (MAS). The Payment Services Act regulates digital payment tokens, while securities tokens fall under the Securities and Futures Act.',
             regulations: [
                 {
@@ -323,6 +362,7 @@ function getSampleData() {
             lastUpdated: '2024-01-15'
         },
         'US': {
+            status: 'unclear',
             overview: 'The United States has a complex regulatory framework for tokenization involving multiple agencies. The SEC regulates security tokens, while the CFTC oversees certain digital commodities. State-level regulations also apply.',
             regulations: [
                 {
@@ -355,6 +395,7 @@ function getSampleData() {
             lastUpdated: '2024-01-20'
         },
         'GB': {
+            status: 'clear',
             overview: 'The United Kingdom regulates tokenization through the Financial Conduct Authority (FCA). Security tokens are regulated as specified investments, while certain crypto assets fall under e-money or payment services regulations.',
             regulations: [
                 {
@@ -386,6 +427,7 @@ function getSampleData() {
             lastUpdated: '2024-01-18'
         },
         'CH': {
+            status: 'clear',
             overview: 'Switzerland, particularly through FINMA, has developed a progressive and clear regulatory framework for tokenization. The country distinguishes between payment tokens, utility tokens, and asset tokens.',
             regulations: [
                 {
