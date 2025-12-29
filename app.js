@@ -29,15 +29,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Initialize Leaflet map
 function initializeMap() {
-    const mapContainer = document.getElementById('map-container');
-
     // Create map centered on world view
     map = L.map('map-container', {
         center: [20, 0],
         zoom: 2,
         minZoom: 2,
         maxZoom: 6,
-        worldCopyJump: true
+        worldCopyJump: true,
+        zoomControl: true
     });
 
     // Add OpenStreetMap tiles
@@ -175,6 +174,9 @@ function displayCountryInfo(countryCode, countryName) {
     const countryNameElement = document.getElementById('country-name');
     const infoContent = document.getElementById('info-content');
 
+    // Show the panel by adding active class
+    infoPanel.classList.add('active');
+
     countryNameElement.textContent = countryName;
 
     const data = countryData[countryCode];
@@ -243,7 +245,12 @@ function displayCountryInfo(countryCode, countryName) {
 // Setup event listeners
 function setupEventListeners() {
     const closeBtn = document.getElementById('close-btn');
+    const infoPanel = document.getElementById('info-panel');
+    
     closeBtn.addEventListener('click', () => {
+        // Hide the panel by removing active class
+        infoPanel.classList.remove('active');
+
         // Reset map view
         map.setView([20, 0], 2);
 
@@ -253,10 +260,14 @@ function setupEventListeners() {
         }
 
         selectedCountry = null;
-        document.getElementById('country-name').textContent = 'Select a Country';
-        document.getElementById('info-content').innerHTML = `
-            <p class="placeholder">Click on any country on the map to see its digital token rules.</p>
-        `;
+        
+        // Reset the content after animation completes
+        setTimeout(() => {
+            document.getElementById('country-name').textContent = 'Select a Country';
+            document.getElementById('info-content').innerHTML = `
+                <p class="placeholder">Click on any country on the map to see its digital token rules.</p>
+            `;
+        }, 400);
     });
 }
 
