@@ -215,13 +215,14 @@ function displayCountryInfo(countryCode, countryName) {
         html += `
             <h3>Legal Framework</h3>
         `;
+        const MAX_PROVISIONS_DISPLAY = 3;
         data.legalFramework.forEach(law => {
             html += `
                 <div style="margin-bottom: 1rem;">
                     <strong>${law.law}</strong> ${law.chapter ? `(${law.chapter})` : ''}
                     ${law.keyProvisions ? `
                         <ul style="margin-top: 0.5rem;">
-                            ${law.keyProvisions.slice(0, 3).map(provision => `<li style="font-size: 0.9rem;">${provision}</li>`).join('')}
+                            ${law.keyProvisions.slice(0, MAX_PROVISIONS_DISPLAY).map(provision => `<li style="font-size: 0.9rem;">${provision}</li>`).join('')}
                         </ul>
                     ` : ''}
                 </div>

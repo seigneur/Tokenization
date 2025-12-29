@@ -166,6 +166,7 @@ class RegulationFetcher:
                     "Part 5: Business conduct requirements",
                     "Part 6: Technology risk management requirements"
                 ],
+                # Penalty amounts as per PSA 2019 - verify against current statute for updates
                 "penalties": "Up to SGD 125,000 fine and/or 3 years imprisonment for operating without a license"
             },
             {
