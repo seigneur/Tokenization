@@ -33,7 +33,7 @@ function initializeMap() {
     map = L.map('map-container', {
         center: [20, 0],
         zoom: 2,
-        minZoom: 1,
+        minZoom: 2,
         maxZoom: 6,
         worldCopyJump: true,
         zoomControl: true

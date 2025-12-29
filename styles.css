@@ -88,13 +88,20 @@ main {
     top: 0;
     right: -25%;
     width: 25%;
-    height: 100vh;
+    height: 100dvh;
     background: white;
     padding: 2rem;
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     z-index: 1000;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fallback for browsers that don't support dvh */
+@supports not (height: 100dvh) {
+    .info-panel {
+        height: 100vh;
+    }
 }
 
 .info-panel.active {
