@@ -1,5 +1,6 @@
 {
   "SG": {
+    "status": "clear",
     "overview": "Singapore has established comprehensive regulations for tokenization through the Monetary Authority of Singapore (MAS). The Payment Services Act regulates digital payment tokens, while securities tokens fall under the Securities and Futures Act.",
     "regulations": [
       {
@@ -38,6 +39,7 @@
     "autoFetched": true
   },
   "US": {
+    "status": "unclear",
     "overview": "The United States has a complex regulatory framework for tokenization involving multiple agencies. The SEC regulates security tokens, while the CFTC oversees certain digital commodities. State-level regulations also apply.",
     "regulations": [
       {
@@ -71,6 +73,7 @@
     "autoFetched": true
   },
   "GB": {
+    "status": "clear",
     "overview": "The United Kingdom regulates tokenization through the Financial Conduct Authority (FCA). Security tokens are regulated as specified investments, while certain crypto assets fall under e-money or payment services regulations.",
     "regulations": [
       {
@@ -103,6 +106,7 @@
     "autoFetched": true
   },
   "CH": {
+    "status": "clear",
     "overview": "Switzerland, particularly through FINMA, has developed a progressive and clear regulatory framework for tokenization. The country distinguishes between payment tokens, utility tokens, and asset tokens.",
     "regulations": [
       {
@@ -133,6 +137,7 @@
     "autoFetched": true
   },
   "AE": {
+    "status": "clear",
     "overview": "The United Arab Emirates has established a progressive regulatory framework for tokenization, with Dubai's Virtual Assets Regulatory Authority (VARA) leading the way. Dubai has created a comprehensive regulatory regime for virtual assets including tokens, while the federal UAE government has also issued regulations through the Securities and Commodities Authority (SCA).",
     "regulations": [
       {

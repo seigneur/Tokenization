@@ -207,6 +207,21 @@ footer {
     main {
         height: calc(100vh - 200px);
     }
+
+    .map-legend {
+        bottom: 10px;
+        left: 10px;
+        padding: 0.75rem;
+        min-width: 160px;
+    }
+
+    .map-legend h3 {
+        font-size: 0.9rem;
+    }
+
+    .legend-item {
+        font-size: 0.8rem;
+    }
 }
 
 .loading {
@@ -229,4 +244,42 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
+}
+
+.map-legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.map-legend h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1rem;
+    color: #4c51bf;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.legend-item:last-child {
+    margin-bottom: 0;
+}
+
+.legend-color {
+    width: 24px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
 }
