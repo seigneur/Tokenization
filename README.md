@@ -15,6 +15,11 @@ This project provides a visual interface to explore tokenization regulatory fram
 ## 🚀 Features
 
 - **Interactive World Map**: Click on countries to view their tokenization regulations
+- **Color-Coded Status**: Visual indicators showing regulatory clarity
+  - 🟢 **Green**: Clear and well-defined tokenization regulations
+  - 🟡 **Yellow**: Unclear or evolving regulatory framework
+  - ⚫ **Black**: Tokenization prohibited or not allowed
+  - ⚪ **Light Purple**: No data available yet
 - **Comprehensive Data**: Regulatory information for major jurisdictions
 - **Automated Updates**: GitHub Actions workflow periodically fetches latest regulatory documents
 - **Responsive Design**: Works on desktop and mobile devices
@@ -58,6 +63,7 @@ To add or update a country's regulatory information:
 ```json
 {
   "XX": {
+    "status": "clear",
     "overview": "Brief overview of the country's tokenization regulatory framework",
     "regulations": [
       {
@@ -81,6 +87,11 @@ To add or update a country's regulatory information:
   }
 }
 ```
+
+**Status Field Values:**
+- `"clear"` - Country has clear, well-defined tokenization regulations (displays as green on map)
+- `"unclear"` - Country has unclear or evolving regulations (displays as yellow on map)
+- `"prohibited"` - Tokenization is prohibited or not allowed (displays as black on map)
 
 3. Update the SVG map in `map.svg` to include the country (if not already present)
 
