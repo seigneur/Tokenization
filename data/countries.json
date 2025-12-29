@@ -34,7 +34,7 @@
         "url": "https://www.mas.gov.sg/regulation/securities-futures-and-fund-management"
       }
     ],
-    "lastUpdated": "2025-12-28",
+    "lastUpdated": "2025-12-29",
     "autoFetched": true
   },
   "US": {
@@ -67,7 +67,7 @@
         "url": "https://www.sec.gov/digital-assets"
       }
     ],
-    "lastUpdated": "2025-12-28",
+    "lastUpdated": "2025-12-29",
     "autoFetched": true
   },
   "GB": {
@@ -99,7 +99,7 @@
         "url": "https://www.fca.org.uk/firms/cryptoassets"
       }
     ],
-    "lastUpdated": "2025-12-28",
+    "lastUpdated": "2025-12-29",
     "autoFetched": true
   },
   "CH": {
@@ -129,7 +129,7 @@
         "url": "https://www.finma.ch/en/finma-topics/finma-tokens/"
       }
     ],
-    "lastUpdated": "2025-12-28",
+    "lastUpdated": "2025-12-29",
     "autoFetched": true
   }
 }
