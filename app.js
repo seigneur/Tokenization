@@ -211,6 +211,54 @@ function displayCountryInfo(countryCode, countryName) {
         `;
     }
 
+    if (data.legalFramework && data.legalFramework.length > 0) {
+        html += `
+            <h3>Legal Framework</h3>
+        `;
+        data.legalFramework.forEach(law => {
+            html += `
+                <div style="margin-bottom: 1rem;">
+                    <strong>${law.law}</strong> ${law.chapter ? `(${law.chapter})` : ''}
+                    ${law.keyProvisions ? `
+                        <ul style="margin-top: 0.5rem;">
+                            ${law.keyProvisions.slice(0, 3).map(provision => `<li style="font-size: 0.9rem;">${provision}</li>`).join('')}
+                        </ul>
+                    ` : ''}
+                </div>
+            `;
+        });
+    }
+
+    if (data.whitepapers && data.whitepapers.length > 0) {
+        html += `
+            <h3>Key Whitepapers & Initiatives</h3>
+        `;
+        data.whitepapers.forEach(paper => {
+            html += `
+                <div style="margin-bottom: 1rem;">
+                    <strong>${paper.title}</strong> ${paper.date ? `(${paper.date})` : ''}
+                    <p style="font-size: 0.9rem; margin-top: 0.25rem;">${paper.description}</p>
+                    ${paper.url ? `<a href="${paper.url}" target="_blank" class="source-link" style="font-size: 0.85rem;">Learn more →</a>` : ''}
+                </div>
+            `;
+        });
+    }
+
+    if (data.consultationPapers && data.consultationPapers.length > 0) {
+        html += `
+            <h3>Recent Consultations</h3>
+        `;
+        data.consultationPapers.forEach(paper => {
+            html += `
+                <div style="margin-bottom: 1rem;">
+                    <strong>${paper.title}</strong> ${paper.date ? `(${paper.date})` : ''}
+                    <p style="font-size: 0.9rem; margin-top: 0.25rem;">${paper.description}</p>
+                    ${paper.status ? `<p style="font-size: 0.85rem; color: #667eea; margin-top: 0.25rem;">Status: ${paper.status}</p>` : ''}
+                </div>
+            `;
+        });
+    }
+
     if (data.authorities && data.authorities.length > 0) {
         html += `
             <h3>Who's in Charge</h3>
@@ -225,7 +273,8 @@ function displayCountryInfo(countryCode, countryName) {
             <h3>Sources</h3>
         `;
         data.sources.forEach(source => {
-            html += `<a href="${source.url}" target="_blank" class="source-link">${source.name}</a> `;
+            const typeLabel = source.type ? ` <span style="font-size: 0.75rem; color: #9ca3af;">[${source.type}]</span>` : '';
+            html += `<a href="${source.url}" target="_blank" class="source-link">${source.name}${typeLabel}</a> `;
         });
     }
 
