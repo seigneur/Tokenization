@@ -32,6 +32,7 @@ header p {
 main {
     position: relative;
     height: calc(100vh - 200px);
+    /* Note: overflow hidden prevents scrolling but allows absolutely positioned children */
     overflow: hidden;
 }
 
@@ -85,27 +86,25 @@ main {
 
 .info-panel {
     position: fixed;
-    top: 0;
-    right: -25%;
+    top: 200px;
+    right: 0;
     width: 25%;
-    height: 100dvh;
+    height: calc(100vh - 200px);
     background: white;
     padding: 2rem;
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     z-index: 1000;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Fallback for browsers that don't support dvh */
-@supports not (height: 100dvh) {
-    .info-panel {
-        height: 100vh;
-    }
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .info-panel.active {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .info-header {
@@ -193,11 +192,11 @@ footer {
 @media (max-width: 968px) {
     .info-panel {
         width: 80%;
-        right: -80%;
+        height: calc(100vh - 200px);
     }
 
     .info-panel.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     header h1 {
