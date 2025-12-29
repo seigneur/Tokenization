@@ -136,6 +136,7 @@ To add new data sources for automated fetching:
 - 🇺🇸 United States (SEC, CFTC)
 - 🇬🇧 United Kingdom (FCA)
 - 🇨🇭 Switzerland (FINMA)
+- 🇦🇪 United Arab Emirates (VARA, SCA)
 
 More jurisdictions are continuously being added.
 
@@ -168,6 +169,8 @@ This information is provided for educational purposes only and should not be con
 - [SEC Digital Assets](https://www.sec.gov/digital-assets)
 - [FCA Cryptoassets](https://www.fca.org.uk/firms/cryptoassets)
 - [FINMA Token Guidance](https://www.finma.ch/en/finma-topics/finma-tokens/)
+- [VARA Dubai Virtual Assets](https://www.vara.ae)
+- [UAE Securities and Commodities Authority](https://www.sca.gov.ae)
 
 ---
 

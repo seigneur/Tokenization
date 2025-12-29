@@ -10,6 +10,7 @@ const countryCodeMap = {
     'GBR': 'GB',
     'CHE': 'CH',
     'SGP': 'SG',
+    'ARE': 'AE',
     'CAN': 'CA',
     'AUS': 'AU',
     'DEU': 'DE',

@@ -1,0 +1,61 @@
+{
+  "overview": "The United Arab Emirates has established a progressive regulatory framework for tokenization, with Dubai's Virtual Assets Regulatory Authority (VARA) leading the way. Dubai has created a comprehensive regulatory regime for virtual assets including tokens, while the federal UAE government has also issued regulations through the Securities and Commodities Authority (SCA).",
+  "regulations": [
+    {
+      "title": "Dubai Virtual Assets Regulation Law (Law No. 4 of 2022)",
+      "description": "Establishes VARA as the regulatory authority for virtual assets in Dubai and provides the framework for licensing and regulation"
+    },
+    {
+      "title": "VARA Virtual Assets and Related Activities Regulations 2023",
+      "description": "Comprehensive regulations covering licensing, conduct, compliance, and operational requirements for virtual asset service providers"
+    },
+    {
+      "title": "VARA Marketing Regulations 2023",
+      "description": "Governs marketing and promotion of virtual assets and related services in Dubai"
+    },
+    {
+      "title": "Federal Decree-Law No. 47 of 2022",
+      "description": "Federal law regulating virtual assets at the UAE national level through the Securities and Commodities Authority"
+    },
+    {
+      "title": "VARA Token Services Regulations",
+      "description": "Specific regulations for token issuance, custody, and trading services"
+    }
+  ],
+  "requirements": [
+    "VARA license required for operating virtual asset activities in Dubai",
+    "Minimum capital requirements varying by license type",
+    "Comprehensive AML/CFT compliance programs mandatory",
+    "Cybersecurity and data protection measures required",
+    "Token issuers must provide detailed disclosure documents",
+    "Custody of virtual assets must meet VARA standards",
+    "Market abuse and insider trading prohibitions enforced",
+    "Consumer protection and fair treatment obligations"
+  ],
+  "authorities": [
+    "Virtual Assets Regulatory Authority (VARA) - Dubai",
+    "Securities and Commodities Authority (SCA) - Federal UAE",
+    "Dubai Financial Services Authority (DFSA) - Dubai International Financial Centre",
+    "Central Bank of the UAE"
+  ],
+  "sources": [
+    {
+      "name": "VARA Official Website",
+      "url": "https://www.vara.ae"
+    },
+    {
+      "name": "Dubai Virtual Assets Regulation Law",
+      "url": "https://www.vara.ae/en/legal-framework"
+    },
+    {
+      "name": "Securities and Commodities Authority",
+      "url": "https://www.sca.gov.ae"
+    },
+    {
+      "name": "VARA Regulations and Guidelines",
+      "url": "https://www.vara.ae/en/laws-and-regulations"
+    }
+  ],
+  "lastUpdated": "2025-12-29",
+  "autoFetched": false
+}
