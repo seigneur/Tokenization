@@ -3,6 +3,10 @@ let countryData = {};
 let selectedCountry = null;
 let map = null;
 let countriesLayer = null;
+let infoPanel = null;
+
+// Animation timing constant (must match CSS transition duration)
+const PANEL_TRANSITION_DURATION = 400; // milliseconds
 
 // Country code mapping (ISO 3166-1 alpha-3 to alpha-2)
 const countryCodeMap = {
@@ -20,6 +24,7 @@ const countryCodeMap = {
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', async () => {
+    infoPanel = document.getElementById('info-panel');
     await loadCountryData();
     initializeMap();
     await loadCountryBoundaries();
@@ -170,7 +175,6 @@ async function loadCountryData() {
 
 // Display country information
 function displayCountryInfo(countryCode, countryName) {
-    const infoPanel = document.getElementById('info-panel');
     const countryNameElement = document.getElementById('country-name');
     const infoContent = document.getElementById('info-content');
 
@@ -245,7 +249,6 @@ function displayCountryInfo(countryCode, countryName) {
 // Setup event listeners
 function setupEventListeners() {
     const closeBtn = document.getElementById('close-btn');
-    const infoPanel = document.getElementById('info-panel');
     
     closeBtn.addEventListener('click', () => {
         // Hide the panel by removing active class
@@ -267,7 +270,7 @@ function setupEventListeners() {
             document.getElementById('info-content').innerHTML = `
                 <p class="placeholder">Click on any country on the map to see its digital token rules.</p>
             `;
-        }, 400);
+        }, PANEL_TRANSITION_DURATION);
     });
 }
 
