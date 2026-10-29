@@ -39,7 +39,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 75%;
     height: 100%;
     z-index: 1;
 }
@@ -86,7 +86,7 @@ main {
 .info-panel {
     position: fixed;
     top: 0;
-    right: -25%;
+    right: 0;
     width: 25%;
     height: 100dvh;
     background: white;
@@ -94,7 +94,7 @@ main {
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     z-index: 1000;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Fallback for browsers that don't support dvh */
@@ -102,10 +102,6 @@ main {
     .info-panel {
         height: 100vh;
     }
-}
-
-.info-panel.active {
-    right: 0;
 }
 
 .info-header {
@@ -191,6 +187,10 @@ footer {
 }
 
 @media (max-width: 968px) {
+    #map-container {
+        width: 100%;
+    }
+
     .info-panel {
         width: 80%;
         right: -80%;

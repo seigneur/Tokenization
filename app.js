@@ -213,7 +213,7 @@ function displayCountryInfo(countryCode, countryName) {
     const countryNameElement = document.getElementById('country-name');
     const infoContent = document.getElementById('info-content');
 
-    // Show the panel by adding active class
+    // Show the panel by adding active class (for mobile)
     infoPanel.classList.add('active');
 
     countryNameElement.textContent = countryName;
@@ -287,7 +287,7 @@ function setupEventListeners() {
     const infoPanel = document.getElementById('info-panel');
     
     closeBtn.addEventListener('click', () => {
-        // Hide the panel by removing active class
+        // Hide the panel by removing active class (for mobile)
         infoPanel.classList.remove('active');
 
         // Reset map view
@@ -300,13 +300,11 @@ function setupEventListeners() {
 
         selectedCountry = null;
         
-        // Reset the content after animation completes
-        setTimeout(() => {
-            document.getElementById('country-name').textContent = 'Select a Country';
-            document.getElementById('info-content').innerHTML = `
-                <p class="placeholder">Click on any country on the map to see its digital token rules.</p>
-            `;
-        }, 400);
+        // Reset the content immediately (no delay needed for desktop where panel is always visible)
+        document.getElementById('country-name').textContent = 'Select a Country';
+        document.getElementById('info-content').innerHTML = `
+            <p class="placeholder">Click on any country on the map to see its digital token rules.</p>
+        `;
     });
 }
 
